@@ -1,33 +1,38 @@
 { pkgs, ... }: {
-  # Which nixpkgs channel to use.
+  # Which nixpkgs channel to use
   channel = "stable-24.05"; # or "unstable"
-  
-  # Use https://search.nixos.org/packages to find packages
-  packages = [
-    pkgs.unzip
-    pkgs.openssh
-    pkgs.git
-    pkgs.qemu_kvm
-    pkgs.sudo
-    pkgs.cdrkit
-    pkgs.cloud-utils
-    pkgs.qemu
+
+  # Packages to be installed in the development environment
+  packages = with pkgs; [
+    unzip
+    openssh
+    git
+    qemu_kvm
+    sudo
+    cdrkit
+    cloud-utils
+    qemu
   ];
-  
-  # Sets environment variables in the workspace
-  env = {};
-  
+
+  # Environment variables for the workspace
+  env = {
+    # Example: set default editor
+    EDITOR = "nano";
+  };
+
   idx = {
-    # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
+    # Extensions from https://open-vsx.org (use "publisher.id")
     extensions = [
       "Dart-Code.flutter"
       "Dart-Code.dart-code"
     ];
 
     workspace = {
-      # Runs when a workspace is first created with this `dev.nix` file
+      # Runs when a workspace is first created
       onCreate = { };
-      # To run something each time the workspace is (re)started, use the `onStart` hook
+
+      # Runs each time the workspace is (re)started
+      onStart = { };
     };
 
     # Disable previews completely
