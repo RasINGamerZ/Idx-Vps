@@ -46,3 +46,5 @@ wget https://github.com/fastfetch-cli/fastfetch/releases/download/2.32.1/fastfet
 # Run Neofetch to display system information
 echo "Running fastfetch..."
 fastfetch
+
+echo "All tasks completed successfully!"
