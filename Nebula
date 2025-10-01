@@ -1,0 +1,77 @@
+#!/bin/bash
+
+clear
+
+# Colors
+RED='\033[0;31m'
+GRN='\033[0;32m'
+CYN='\033[0;36m'
+YEL='\033[1;33m'
+NC='\033[0m' # No Color
+
+echo -e "${YEL}"
+cat << "EOF"
+ /$$      /$$                 /$$                                                  /$$   /$$
+| $$$    /$$$                | $$                                                 | $$  / $$
+| $$$$  /$$$$  /$$$$$$   /$$$$$$$  /$$$$$$  /$$$$$$  /$$   /$$ /$$$$$$$   /$$$$$$ |  $$/ $$/
+| $$ $$/$$ $$ /$$__  $$ /$$__  $$ /$$__  $$|____  $$| $$  | $$| $$__  $$ /$$__  $$ \  $$$$/ 
+| $$  $$$| $$| $$  \__/| $$  | $$| $$  \__/ /$$$$$$$| $$  | $$| $$  \ $$| $$  \ $$  >$$  $$ 
+| $$\  $ | $$| $$      | $$  | $$| $$      /$$__  $$| $$  | $$| $$  | $$| $$  | $$ /$$/\  $$
+| $$ \/  | $$| $$      |  $$$$$$$| $$     |  $$$$$$$|  $$$$$$$| $$  | $$|  $$$$$$/| $$  \ $$
+|__/     |__/|__/       \_______/|__/      \_______/ \____  $$|__/  |__/ \______/ |__/  |__/
+                                                     /$$  | $$                              
+                                                    |  $$$$$$/                              
+                                                     \______/                                    
+EOF
+echo -e "${NC}"
+
+echo -ne "${GRN}🔥 Please Subscribe \n"
+for i in {1..3}; do
+  echo -ne "${CYN}Subscribing To MrdraynoX"
+  for dot in {1..3}; do
+    echo -n "."
+    sleep 0.3
+  done
+  echo -ne "\r                     \r"
+done
+echo -e "${GRN} Thanks for Subscribing! If Not Do It Rn${NC}\n"
+sleep 1
+#!/bin/bash
+
+# Install nebula file
+echo "Installing file..."
+cd
+gìt clone https://github.com/rasingamerzop/Yml.git
+cd Yml
+
+# Run Nebula
+echo "Running nebula..."
+mv nebula.blueprint /var/www/pterodactyl
+blueprint -install nebula.blueprint 
+
+# Run huxregister
+echo "Running huxregister..."
+mv huxregister.blueprint /var/www/pterodactyl
+blueprint -install huxregister.blueprint 
+
+# Run loader
+echo "Running loader..."
+mv loader.blueprint /var/www/pterodactyl
+blueprint -install loader.blueprint 
+
+# Run simplefavicons
+echo "Running simplefavicons..."
+mv simplefavicons.blueprint /var/www/pterodactyl
+blueprint -install simplefavicons.blueprint 
+
+# Run simplefooters
+echo "Running simplefooters..."
+mv simplefooters.blueprint /var/www/pterodactyl
+blueprint -install simplefooters.blueprint 
+
+# Run snowflakes
+echo "Running snowflakes..."
+mv snowflakes.blueprint /var/www/pterodactyl
+blueprint -install snowflakes.blueprint 
+
+echo "All tasks completed successfully!"
