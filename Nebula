@@ -41,7 +41,7 @@ sleep 1
 # Install nebula file
 echo "Installing file..."
 cd
-gìt clone https://github.com/rasingamerzop/Yml.git
+gìt clone https://github.com/rasingamerzop/1.git
 cd Yml
 
 # Run Nebula
